@@ -9,40 +9,83 @@
 ![Looker Studio](https://img.shields.io/badge/Looker-Studio-4285F4?logo=googleanalytics&logoColor=white)
 ![GitHub](https://img.shields.io/badge/GitHub-Repository-black?logo=github)
 
+---
+
 ## Overview
 
 This project analyzes customer purchasing behavior and retention patterns using the Brazilian E-Commerce Public Dataset by Olist.
 
 The analysis focuses on customer acquisition growth, repeat customer behavior, cohort retention performance, and customer segmentation to identify retention opportunities and support long-term business decisions.
 
-Data extraction and transformation were performed using Google BigQuery (SQL), while Python was used for analysis and visualization. An interactive dashboard was created using Looker Studio.
+Data extraction and aggregation were performed using Google BigQuery (SQL), while Python was used for transformation, analysis, and visualization. An interactive dashboard was created using Looker Studio.
 
 ---
 
-## Project Objective
+## Business Questions
 
-The objective of this project is to analyze customer behavior and retention performance across the Olist marketplace.
+This project aims to answer:
 
-This analysis focuses on:
-
-- customer acquisition trends
-- repeat customer behavior
-- cohort retention analysis
-- customer segmentation
-- revenue contribution by customer segment
-
-The goal is to identify customer retention opportunities and generate business recommendations based on purchasing behavior.
+- How did customer acquisition grow over time?
+- How many customers returned to purchase again each month?
+- How strong was customer retention across cohorts?
+- Which customer segments contributed the highest revenue?
+- Which customer groups present retention opportunities?
 
 ---
 
-## Tools Used
+## Project Workflow
 
-- Google BigQuery (SQL)
-- Python (Google Colab)
-- Pandas
-- Matplotlib
-- Google Looker Studio
-- GitHub
+### 1. Data Quality Check
+
+Validated:
+
+- missing values
+- duplicate records
+- table consistency
+
+---
+
+### 2. Customer Master Table
+
+Built customer-level metrics:
+
+- customer_unique_id
+- customer_state
+- first_purchase_date
+- last_purchase_date
+- total_orders
+- total_revenue
+- avg_order_value
+- avg_review_score
+
+---
+
+### 3. Customer Growth Analysis
+
+Created:
+
+- monthly customer acquisition trend
+- monthly returning customer trend
+
+---
+
+### 4. Cohort Retention Analysis
+
+Measured customer retention by cohort month to understand repeat purchase behavior over time.
+
+---
+
+### 5. Customer Segmentation
+
+Segmented customers into:
+
+- Others
+- Potential Loyalists
+- At Risk
+- Loyal Customers
+- Champions
+
+based on purchase frequency, revenue, and customer behavior.
 
 ---
 
@@ -54,7 +97,7 @@ Olist Brazilian E-Commerce Public Dataset
 
 https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce
 
-Raw source files are not included in this repository due to file size limitations.
+Raw dataset files are not included due to file size limitations.
 
 ---
 
@@ -64,109 +107,84 @@ Raw source files are not included in this repository due to file size limitation
 
 ---
 
-## Dashboard Overview
+# Dashboard
 
-### Customer Behavior & Retention Analytics Dashboard
+## Customer Behavior & Retention Analytics Dashboard
 
 ![Dashboard](dashboard/dashboard-overview.png)
 
-Interactive dashboard:
+### Interactive Dashboard
 
 https://datastudio.google.com/s/oh7wi44hxh8
 
-PDF version:
+### PDF Version
 
 [Download Dashboard PDF](dashboard/Customer_Behavior_Retention_Dashboard.pdf)
 
 ---
 
-## Notebook
+# Notebook
 
-Google Colab:
+### Google Colab
 
 https://colab.research.google.com/drive/1eagtvB6yyUqR2csBWYuq-6WCVYN6N5oL?usp=sharing
 
-Local notebook file:
+---
 
-/notebook/Customer_Behavior_and_Retention_Analytics_Olist.ipynb
+# SQL Files
+
+| File | Description |
+|---|---|
+| 01_data_quality_check.sql | validation |
+| 02_customer_master.sql | customer summary |
+| 03_customer_acquisition.sql | acquisition trend |
+| 04_returning_customer_trend.sql | returning customers |
+| 05_customer_cohort_retention.sql | cohort analysis |
+| vw_customer_acquisition.sql | dashboard view |
+| vw_returning_customer.sql | dashboard view |
+| vw_customer_segment.sql | dashboard segmentation |
 
 ---
 
-## SQL Workflow
+# Python Visualizations
 
-### Data Quality Check
-
-- missing value validation
-- duplicate validation
-
-### Customer Master Table
-
-Customer-level dataset containing:
-
-- first purchase date
-- last purchase date
-- total orders
-- total revenue
-- average order value
-- average review score
-
-### Customer Acquisition Trend
-
-Monthly new customer trend.
-
-### Returning Customer Trend
-
-Monthly repeat customer trend.
-
-### Cohort Retention
-
-Customer retention by cohort.
-
-### Customer Segment View
-
-Segment classification for dashboard analysis.
-
----
-
-## Python Visualizations
-
-### Monthly Customer Acquisition
+## Monthly Customer Acquisition
 
 ![Monthly Acquisition](assets/monthly_customer_acquisition.png)
 
-### Monthly Returning Customers
+## Monthly Returning Customers
 
-![Returning Customer](assets/returning_customer_trend.png)
+![Returning Customers](assets/returning_customer_trend.png)
 
-### Cohort Retention Heatmap
+## Cohort Retention Heatmap
 
 ![Cohort Retention](assets/cohort_retention_heatmap.png)
 
-### Customer Segment Distribution
+## Customer Segment Distribution
 
 ![Segment Distribution](assets/customer_segment_distribution.png)
 
-### Revenue by Customer Segment
+## Revenue by Customer Segment
 
 ![Revenue Segment](assets/revenue_by_segment.png)
 
 ---
 
-## Key Insights
+# Key Insights
 
-Customer acquisition increased steadily throughout the analysis period and reached its highest level near the end of 2017 before stabilizing.
+Customer acquisition increased steadily throughout the analysis period and reached its peak near the end of 2017 before stabilizing in 2018.
 
-Returning customer activity also improved consistently over time, indicating stronger customer retention as the marketplace matured.
+Returning customer activity also improved over time, indicating stronger repeat purchase behavior as the marketplace matured.
 
-Cohort retention analysis shows that repeat purchases happen most frequently shortly after first purchase before gradually declining over time.
+Cohort retention analysis shows that most repeat purchases occur shortly after first purchase, with retention gradually decreasing over time.
 
-Customer segmentation reveals that the **Others** segment contains the largest customer base, while **Potential Loyalists** contribute the highest revenue.
+Customer segmentation reveals that **Others** represent the largest share of customers, while **Potential Loyalists** contribute the highest revenue.
 
-The **At Risk** segment represents a meaningful retention opportunity, while **Champions** remain valuable despite smaller volume.
+The **At Risk** segment represents a valuable retention opportunity, while **Champions**, although smaller in volume, remain highly valuable customers.
 
 ---
 
-## Repository Structure
+# Repository Structure
 
 ```bash
 customer-behavior-retention-analytics-olist/
@@ -181,6 +199,6 @@ customer-behavior-retention-analytics-olist/
 
 ---
 
-## Author
+# Author
 
 Kenneth Christian Nathanael
