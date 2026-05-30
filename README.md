@@ -11,6 +11,16 @@
 
 ---
 
+## Project Highlights
+
+- Built an end-to-end customer retention analytics workflow using **BigQuery, Python, and Looker Studio**
+- Processed and analyzed **Brazilian e-commerce customer behavior data (2016–2018)**
+- Created customer-level metrics and segmentation for retention analysis
+- Built an interactive dashboard for acquisition, repeat purchase, cohort retention, and customer segments
+- Generated actionable business insights and retention recommendations
+
+---
+
 ## Overview
 
 This project analyzes customer purchasing behavior and retention patterns using the Brazilian E-Commerce Public Dataset by Olist.
@@ -113,9 +123,19 @@ Raw dataset files are not included due to file size limitations.
 
 ![Dashboard](dashboard/dashboard-overview.png)
 
+## Key Metrics
+
+| Metric | Value |
+|---|---:|
+| Total Customers | 93K+ |
+| Repeat Customer Rate | 3% |
+| Total Revenue | R$15M+ |
+| Customer Segments | 5 |
+| Analysis Period | 2016–2018 |
+
 ### Interactive Dashboard
 
-https://datastudio.google.com/s/oh7wi44hxh8
+[Open Looker Studio Dashboard](https://datastudio.google.com/s/oh7wi44hxh8)
 
 ### PDF Version
 
@@ -127,7 +147,7 @@ https://datastudio.google.com/s/oh7wi44hxh8
 
 ### Google Colab
 
-https://colab.research.google.com/drive/1eagtvB6yyUqR2csBWYuq-6WCVYN6N5oL?usp=sharing
+[Open Notebook in Google Colab](https://colab.research.google.com/drive/1eagtvB6yyUqR2csBWYuq-6WCVYN6N5oL?usp=sharing)
 
 ---
 
@@ -202,3 +222,9 @@ customer-behavior-retention-analytics-olist/
 # Author
 
 Kenneth Christian Nathanael
+
+**GitHub**:
+https://github.com/kenchristn
+
+**Portfolio**:
+https://kenchristn.com
